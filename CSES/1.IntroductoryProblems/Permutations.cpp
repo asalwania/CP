@@ -6,32 +6,23 @@ int main()
 {
     int n;
     cin >> n;
-    if(n<5 && n>1){
+    if(n==1){
+        cout << n;
+        return 0;
+    }
+    if (n < 4 && n > 1)
+    {
         cout << "NO SOLUTION";
         return 0;
     }
-    int arr[n];
-    for (int i = 1; i <= n; i++)
+    for (int i = 2; i <= n; i += 2)
     {
-        arr[i - 1] = i;
+        cout << i << " ";
     }
-
-    for (int i = 0; i < n-1; i += 2)
+    for (int i = 1; i <= n; i += 2)
     {
-        if(i >= n-3){
-            swap(arr[i],arr[n-1]);
-            break;
-        }
-        if((i&1)==0){
-            swap(arr[i],arr[i+3]);
-        }
+        cout << i << " ";
     }
-    
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    
 
     return 0;
 }
